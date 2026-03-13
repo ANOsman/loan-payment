@@ -1,5 +1,6 @@
 package com.qualica.loan_payment_service.loan.controller;
 
+import com.qualica.loan_payment_service.loan.dto.LoanRequest;
 import com.qualica.loan_payment_service.loan.entity.Loan;
 import com.qualica.loan_payment_service.loan.service.LoanService;
 import jakarta.validation.Valid;
@@ -16,10 +17,10 @@ public class LoanController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Loan createLoan(@Valid @RequestBody Loan loan) {
+    public Loan createLoan(@Valid @RequestBody LoanRequest request) {
         return loanService.createLoan(
-                loan.getLoanAmount(),
-                loan.getTerm()
+                request.getLoanAmount(),
+                request.getTerm()
         );
     }
 

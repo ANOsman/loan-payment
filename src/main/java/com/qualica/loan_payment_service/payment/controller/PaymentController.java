@@ -1,5 +1,6 @@
 package com.qualica.loan_payment_service.payment.controller;
 
+import com.qualica.loan_payment_service.payment.dto.PaymentRequest;
 import com.qualica.loan_payment_service.payment.entiry.Payment;
 import com.qualica.loan_payment_service.payment.service.PaymentService;
 import jakarta.validation.Valid;
@@ -17,11 +18,11 @@ public class PaymentController {
     private final PaymentService paymentService;
 
     @PostMapping
-    public Payment makePayment(@Valid @RequestBody Payment payment) {
+    public Payment makePayment(@Valid @RequestBody PaymentRequest request) {
 
         return paymentService.makePayment(
-                payment.getLoanId(),
-                payment.getPaymentAmount()
+                request.getLoanId(),
+                request.getPaymentAmount()
         );
     }
 }
