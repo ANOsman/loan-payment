@@ -20,8 +20,15 @@ The application uses an **H2 in-memory database** for persistence.
 * Spring Boot
 * Spring Data JPA
 * H2 Database
+* Lombok
 * Maven
 * JUnit
+
+## Lombok
+
+This project uses Lombok to reduce boilerplate code (getters, setters, constructors, etc.).
+
+If using an IDE such as IntelliJ IDEA, ensure the Lombok plugin is installed and annotation processing is enabled.
 
 ---
 
